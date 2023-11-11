@@ -87,15 +87,47 @@ function App() {
   function handleClick(e) {
     const op = e.target.name; 
 
+    switch (op) {
+      case 'all' :
+        setData([...people , ...calendar, ...emails])
+        setCurrentOption('all');
+        break;
+        
+        case 'people' :
+        setData([...people])
+        setCurrentOption('people');
+        break; 
+        
+        case 'calendar' :
+        setData([...calendar])
+        setCurrentOption('calendar');
+        break;
+        
+        
+        case 'emails' :
+        setData([...emails])
+        setCurrentOption('emails');
+        break;
+
+                
+
+
+        default:
+
+
+    }
+
   }
   
 
   return (
-    <div className="App">
+    <div className='App'>
+
     <button onClick={handleClick} name='all'>All</button>
-    <button onClick={handleClick} name='all'>All</button>
-    <button onClick={handleClick} name='all'>All</button>
-    <button onClick={handleClick} name='all'>All</button>
+    <button onClick={handleClick} name='people'>People</button>
+    <button onClick={handleClick} name='calendar'>Calendar</button>
+    <button onClick={handleClick} name='emails'>E-Mail</button>
+    
         
 
     
@@ -104,4 +136,6 @@ function App() {
     </div>
   )
 }
+
+export default App;
 
